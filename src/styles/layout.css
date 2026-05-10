@@ -1,0 +1,128 @@
+.page-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.page-layout > main {
+  flex: 1;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+.page-main {
+  flex: 1;
+  padding: 2.5rem 2rem;
+  max-width: 900px;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 2px solid #e8e0d4;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.page-header p {
+  color: #6b6b6b;
+  font-size: 14px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e8e0d4;
+  border-radius: 10px;
+  padding: 1.4rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(30,20,10,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 2rem 2.2rem;
+  min-width: 340px;
+  max-width: 480px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+.modal-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 9px 0;
+  border-bottom: 1px solid #e8e0d4;
+  font-size: 14px;
+}
+
+.modal-row span:first-child {
+  color: #6b6b6b;
+}
+
+.modal-row span:last-child {
+  font-weight: 500;
+}
+
+.hero {
+  position: relative;
+  height: 340px;
+  min-height: 340px;
+  overflow: hidden;
+  background: #585123;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.55);
+  position: absolute;
+  inset: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 3rem;
+  z-index: 1;
+}
+
+.hero-sub {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #f58549;
+  margin-bottom: 8px;
+}
+
+.hero-title {
+  font-family: 'Merriweather', serif;
+  font-size: 2.4rem;
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.hero-desc {
+  font-size: 15px;
+  color: rgba(255,255,255,0.8);
+  max-width: 480px;
+  line-height: 1.6;
+}

@@ -1,0 +1,178 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Test User",
+      "username": "testuser",
+      "website": "password123",
+      "email": "test@test.com",
+      "phone": "050-0000000",
+      "address": {
+        "city": "Tel Aviv"
+      }
+    },
+    {
+      "username": "isca",
+      "website": "001-",
+      "name": "Isca Fitousi",
+      "email": "isca7701@gmail.com",
+      "phone": "0585567701",
+      "address": {
+        "city": "Beer Sheva"
+      },
+      "id": 2
+    },
+    {
+      "username": "SHIRA",
+      "website": "123",
+      "name": "SHIRA ITACH",
+      "email": "shira0103050709@gmail.com",
+      "phone": "0587836006",
+      "address": {
+        "city": "Rehovot"
+      },
+      "id": 3
+    }
+  ],
+  "todos": [
+    {
+      "userId": 3,
+      "title": "קמח לבן",
+      "completed": true,
+      "id": 1
+    },
+    {
+      "userId": 3,
+      "title": "גבינה",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "userId": 3,
+      "title": "חלב",
+      "completed": false,
+      "id": 4
+    },
+    {
+      "userId": 3,
+      "title": "סוכר",
+      "completed": false,
+      "id": 5
+    },
+    {
+      "userId": 3,
+      "title": "קמח",
+      "completed": false,
+      "id": 6
+    }
+  ],
+  "posts": [
+    {
+      "userId": 3,
+      "title": "קפה קר",
+      "body": "קפה\nסוכר\nחלב\nקרח\n\nמערבבים את הקפה והסוכר עם מים חמים.\nמוסיפים קרח וקצת מים קרים.\nמקציפים חלב ומוסיפים. וזהו :)",
+      "id": 1
+    },
+    {
+      "userId": 3,
+      "title": "בננה לוטי",
+      "body": "בננה\nשוקולד\nדף אורז\n\nמרטיבים את הדף אורז קלות,, חותכים את הבננה לקוביות ומסדרים במרכז הדף.\nמקפלים כמו מתנה ושמים במחבת חמה להיטגן כ5 דקות לכל צד.\nמוציאים לצלחת ומזלפים שוקולד למעלה.",
+      "id": 2
+    }
+  ],
+  "albums": [
+    {
+      "userId": 3,
+      "title": "עוגות",
+      "id": 1
+    },
+    {
+      "userId": 3,
+      "title": "קפה",
+      "id": 2
+    }
+  ],
+  "photos": [
+    {
+      "albumId": 1,
+      "title": "עוגת גבינה",
+      "url": "https://www.bishulim.co.il/sites/default/files/srh_recipes/10b1ee7b52ef93411b7643a200d9c7e0.jpg",
+      "thumbnailUrl": "https://www.bishulim.co.il/sites/default/files/srh_recipes/10b1ee7b52ef93411b7643a200d9c7e0.jpg",
+      "id": 1
+    },
+    {
+      "albumId": 1,
+      "title": "עוגת שוקולד",
+      "url": "https://rotteml.com/wp-content/uploads/2021/05/Untitled-Capture10657.jpg",
+      "thumbnailUrl": "https://rotteml.com/wp-content/uploads/2021/05/Untitled-Capture10657.jpg",
+      "id": 2
+    },
+    {
+      "albumId": 1,
+      "title": "עוגת תפוזים",
+      "url": "https://d3o5sihylz93ps.cloudfront.net/wp-content/uploads/2018/09/02163348/%D7%A2%D7%95%D7%92%D7%AA-%D7%AA%D7%A4%D7%95%D7%96%D7%99%D7%9D-%D7%A7%D7%A8%D7%99%D7%9F.jpg",
+      "thumbnailUrl": "https://d3o5sihylz93ps.cloudfront.net/wp-content/uploads/2018/09/02163348/%D7%A2%D7%95%D7%92%D7%AA-%D7%AA%D7%A4%D7%95%D7%96%D7%99%D7%9D-%D7%A7%D7%A8%D7%99%D7%9F.jpg",
+      "id": 3
+    },
+    {
+      "albumId": 2,
+      "title": "קפה קר",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMocdf41Z21RavJaNKu9yOZv3T94j9pHPhEQ&s",
+      "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMocdf41Z21RavJaNKu9yOZv3T94j9pHPhEQ&s",
+      "id": 4
+    },
+    {
+      "albumId": 2,
+      "title": "קפוצ'ינו",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsAGn0RypcY-ptBhLCtVPtrvjLYlNYP9K4jQ&s",
+      "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsAGn0RypcY-ptBhLCtVPtrvjLYlNYP9K4jQ&s",
+      "id": 5
+    },
+    {
+      "albumId": 2,
+      "title": "אספרסו כפול",
+      "url": "https://coffeeol.co.il/wp-content/uploads/2019/05/%D7%90%D7%99%D7%9A-%D7%9E%D7%9B%D7%99%D7%A0%D7%99%D7%9D-%D7%90%D7%A1%D7%A4%D7%A8%D7%A1%D7%95-%D7%A7%D7%A6%D7%A8.jpg",
+      "thumbnailUrl": "https://coffeeol.co.il/wp-content/uploads/2019/05/%D7%90%D7%99%D7%9A-%D7%9E%D7%9B%D7%99%D7%A0%D7%99%D7%9D-%D7%90%D7%A1%D7%A4%D7%A8%D7%A1%D7%95-%D7%A7%D7%A6%D7%A8.jpg",
+      "id": 6
+    },
+    {
+      "albumId": 1,
+      "title": "עוגת דבש",
+      "url": "https://d3o5sihylz93ps.cloudfront.net/wp-content/uploads/2022/09/12162020/WhatsApp-Image-2022-09-12-at-11.34.29.jpeg",
+      "thumbnailUrl": "https://d3o5sihylz93ps.cloudfront.net/wp-content/uploads/2022/09/12162020/WhatsApp-Image-2022-09-12-at-11.34.29.jpeg",
+      "id": 7
+    },
+    {
+      "albumId": 1,
+      "title": "עוגת בננות",
+      "url": "https://d3o5sihylz93ps.cloudfront.net/wp-content/uploads/2020/01/13152414/555.jpg",
+      "thumbnailUrl": "https://d3o5sihylz93ps.cloudfront.net/wp-content/uploads/2020/01/13152414/555.jpg",
+      "id": 8
+    },
+    {
+      "albumId": 1,
+      "title": "עוגת פרג",
+      "url": "https://brwsugar.com/wp-content/uploads/2024/01/IMG_6048-576x658.jpg",
+      "thumbnailUrl": "https://brwsugar.com/wp-content/uploads/2024/01/IMG_6048-576x658.jpg",
+      "id": 9
+    }
+  ],
+  "comments": [
+    {
+      "postId": 2,
+      "name": "SHIRA ITACH",
+      "email": "shira0103050709@gmail.com",
+      "body": "הרגשה של תאילנד בישראל:)",
+      "userId": 3,
+      "id": 2
+    },
+    {
+      "postId": 1,
+      "name": "SHIRA ITACH",
+      "email": "shira0103050709@gmail.com",
+      "body": "קוללל ונדיר",
+      "userId": 3,
+      "id": 3
+    }
+  ]
+}

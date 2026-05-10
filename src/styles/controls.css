@@ -1,0 +1,89 @@
+input, textarea, select {
+  font-family: 'Heebo', sans-serif;
+  font-size: 14px;
+  padding: 10px 14px;
+  border: 1.5px solid #e8e0d4;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #3b3b3b;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #f58549;
+}
+
+button {
+  font-family: 'Heebo', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 9px 20px;
+  border-radius: 10px;
+  border: 1.5px solid #e8e0d4;
+  background: #ffffff;
+  color: #3b3b3b;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+button:hover {
+  border-color: #f58549;
+  color: #d4622a;
+}
+
+button.primary {
+  background: #f58549;
+  color: #ffffff;
+  border-color: #f58549;
+}
+
+button.primary:hover {
+  background: #d4622a;
+  border-color: #d4622a;
+  color: #ffffff;
+}
+
+button.danger {
+  color: #c0392b;
+  border-color: #f5c6c6;
+}
+
+button.danger:hover {
+  background: #fff0f0;
+  color: #c0392b;
+}
+
+.controls-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 1.25rem 0;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b6b6b;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.error-msg {
+  color: #c0392b;
+  font-size: 13px;
+  margin-top: 8px;
+  padding: 10px 14px;
+  background: #fff0f0;
+  border-radius: 8px;
+  border-right: 3px solid #c0392b;
+}

@@ -1,0 +1,234 @@
+.list-item {
+  background: #ffffff;
+  border: 1px solid #e8e0d4;
+  border-radius: 10px;
+  padding: 13px 18px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: box-shadow 0.15s;
+}
+
+.list-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.list-item.selected {
+  border-color: #f58549;
+  border-right: 3px solid #f58549;
+}
+
+.item-id {
+  font-size: 12px;
+  color: #6b6b6b;
+  min-width: 36px;
+  background: #faf7f2;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 2.5rem;
+}
+
+.stat-card {
+  background: #ffffff;
+  border: 1px solid #e8e0d4;
+  border-top: 3px solid #f58549;
+  border-radius: 16px;
+  padding: 1.8rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.18s, box-shadow 0.18s;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.14);
+}
+
+.stat-emoji {
+  font-size: 28px;
+}
+
+.stat-number {
+  font-family: 'Merriweather', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #585123;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: #6b6b6b;
+  font-weight: 500;
+}
+
+.kitchen-quote {
+  margin-top: 2rem;
+  padding: 1.5rem 2rem;
+  border-left: 4px solid #f58549;
+  background: #ffffff;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.kitchen-quote p {
+  font-family: 'Merriweather', serif;
+  font-size: 1.05rem;
+  color: #585123;
+  font-style: italic;
+  margin-bottom: 8px;
+  line-height: 1.7;
+}
+
+.kitchen-quote span {
+  font-size: 13px;
+  color: #6b6b6b;
+  font-weight: 500;
+}
+
+.home-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.home-card {
+  background: #ffffff;
+  border: 1px solid #e8e0d4;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.home-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.14);
+}
+
+.home-card-img-wrap {
+  overflow: hidden;
+  height: 180px;
+}
+
+.home-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.home-card:hover .home-card-img {
+  transform: scale(1.06);
+}
+
+.home-card-body {
+  padding: 1.2rem 1.3rem;
+}
+
+.home-card-body h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  color: #585123;
+}
+
+.home-card-body p {
+  font-size: 13px;
+  color: #6b6b6b;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.home-card-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f58549;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 14px;
+  margin-top: 1rem;
+}
+
+.photo-card {
+  border: 1px solid #e8e0d4;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ffffff;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.photo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.14);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-card-body {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.photo-card-body p {
+  font-size: 12px;
+  color: #6b6b6b;
+  line-height: 1.4;
+}
+
+.comment-box {
+  background: #faf7f2;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-right: 3px solid #e8e0d4;
+  transition: border-color 0.15s;
+}
+
+.comment-box:hover {
+  border-right-color: #f58549;
+}
+
+.comment-author {
+  font-size: 12px;
+  font-weight: 600;
+  color: #d4622a;
+  margin-bottom: 4px;
+}
+
+.comment-body {
+  font-size: 14px;
+  color: #3b3b3b;
+  line-height: 1.6;
+}
+
+input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: #f58549;
+  cursor: pointer;
+}
