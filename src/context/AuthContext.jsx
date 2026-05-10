@@ -4,23 +4,23 @@ const AuthContext = createContext(null)
 
 /**
  * AuthProvider – wraps the app and exposes auth state + actions.
- * Reads from localStorage on first render so the user stays logged in
- * after a page refresh (this is the Cache / persistence challenge).
+ * המשתמש נשמר ב-LocalStorage כנדרש בדרישות חלק ג:
+ * "משתמש מורשה שביצע כניסה – יישמר במערכת (Local Storage = LS)"
+ * וגם: "לחיצה על כפתור Logout תוציא את המשתמש (תמחק את המידע ב-LS)"
  */
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
-    // On mount, restore user from localStorage if it exists
     const stored = localStorage.getItem('loggedUser')
     return stored ? JSON.parse(stored) : null
   })
 
-  /** Save user to state AND localStorage */
+  /** שמירת המשתמש ב-state וב-LocalStorage */
   function login(userData) {
     localStorage.setItem('loggedUser', JSON.stringify(userData))
     setUser(userData)
   }
 
-  /** Remove user from state AND localStorage */
+  /** מחיקת המשתמש מה-state ומה-LocalStorage */
   function logout() {
     localStorage.removeItem('loggedUser')
     setUser(null)
@@ -33,7 +33,7 @@ export function AuthProvider({ children }) {
   )
 }
 
-/** Custom hook – shorthand for useContext(AuthContext) */
+/** Custom hook – גישה קצרה ל-AuthContext */
 export function useAuth() {
   return useContext(AuthContext)
 }

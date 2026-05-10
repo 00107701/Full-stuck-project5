@@ -96,6 +96,21 @@
       "userId": 3,
       "title": "קפה",
       "id": 2
+    },
+    {
+      "userId": 2,
+      "title": "camera",
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "title": "b",
+      "id": 4
+    },
+    {
+      "userId": 2,
+      "title": "ב",
+      "id": 5
     }
   ],
   "photos": [
@@ -161,6 +176,13 @@
       "url": "https://brwsugar.com/wp-content/uploads/2024/01/IMG_6048-576x658.jpg",
       "thumbnailUrl": "https://brwsugar.com/wp-content/uploads/2024/01/IMG_6048-576x658.jpg",
       "id": 9
+    },
+    {
+      "albumId": 3,
+      "title": "a",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Good_Food_In_Dishes_-_NCI_Visuals_Online.jpg",
+      "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/1/13/Good_Food_In_Dishes_-_NCI_Visuals_Online.jpg",
+      "id": 10
     }
   ],
   "comments": [
