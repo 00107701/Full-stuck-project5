@@ -1,11 +1,5 @@
-/**
- * SearchBar – reusable text input for filtering lists.
- *
- * Props:
- *   value       – controlled input value
- *   onChange    – setter function
- *   placeholder – input placeholder text
- */
+// רכיב שדה חיפוש לסינון רשימות
+// מקבל את הערך הנוכחי, פונקציית עדכון וטקסט placeholder
 export default function SearchBar({ value, onChange, placeholder = 'Search...' }) {
   return (
     <input

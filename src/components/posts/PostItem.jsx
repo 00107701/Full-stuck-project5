@@ -32,7 +32,7 @@ export default function PostItem({ post, currentUser, isSelected, onSelect, onEd
         marginBottom: 8,
       }}
     >
-      {/* שורת סקירה של הפוסט - לפי הדרישה מוצגים id וכותרת */}
+      {/* שורת סקירה של הפוסט -מוצגים id וכותרת */}
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
         {/* מזהה הפוסט */}
         <span style={{ color: '#aaa', fontSize: 13, minWidth: 32 }}>

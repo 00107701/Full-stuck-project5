@@ -2,7 +2,6 @@
 const BASE = 'http://localhost:3001'
 
 // פונקציה כללית שמבצעת בקשות לשרת
-// משתמשים בה כדי שלא נכתוב fetch מחדש בכל פעולה
 async function request(path, options = {}) {
   const res = await fetch(`${BASE}${path}`, {
     headers: { 'Content-Type': 'application/json' },
@@ -124,14 +123,9 @@ export const createAlbum = (data) =>
   })
 
 // ── Photos ─────────────────────────────────────────────
-// שליפת כל התמונות של אלבום מסוים
-// נשאיר את זה כדי לא לשבור קוד קיים שמשתמש בפונקציה הזאת
-export const getPhotosByAlbum = (albumId) =>
-  request(`/photos?albumId=${albumId}`)
 
-// שליפת תמונות בשלבים לפי עמוד וכמות
-// זה התיקון החשוב להנחיה: לא מביאים את כל התמונות בפעם אחת
-export const getPhotosByAlbumPage = (albumId, page = 1, limit = 6) =>
+// שליפת תמונות בשלבים לפי עמוד וכמות לכל עמוד (לצורך גלילה אינסופית)
+export const getPhotosByAlbumPage = (albumId, page = 1, limit = 5) =>
   request(`/photos?albumId=${albumId}&_page=${page}&_limit=${limit}`)
 
 // יצירת תמונה חדשה באלבום

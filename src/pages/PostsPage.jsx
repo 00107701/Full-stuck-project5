@@ -8,44 +8,73 @@ import SearchBar from '../components/ui/SearchBar'
 import Modal from '../components/ui/Modal'
 import { useNavigate } from 'react-router-dom'
 
+// דף הפוסטים והמתכונים
+// תומך בשני מצבים: הצגת הפוסטים של המשתמש בלבד, או הצגת כל הפוסטים של כולם
 export default function PostsPage() {
+
+  // שליפת המשתמש המחובר ופונקציית ההתנתקות מה-Context
   const { user, logout } = useAuth()
+
+  // פונקציה למעבר בין דפים
   const navigate = useNavigate()
 
+  // רשימת הפוסטים שנטענו מהשרת
   const [posts,        setPosts]        = useState([])
+
+  // האם כרגע מתבצעת טעינה מהשרת
   const [loading,      setLoading]      = useState(true)
+
+  // טקסט החיפוש שהמשתמש הקליד
   const [search,       setSearch]       = useState('')
+
+  // הפוסט שנבחר כרגע להצגה מורחבת – null אם אף פוסט לא נבחר
   const [selectedPost, setSelectedPost] = useState(null)
+
+  // האם להציג את חלון פרטי המשתמש
   const [showInfo,     setShowInfo]     = useState(false)
+
+  // האם להציג את כל הפוסטים של כולם או רק של המשתמש המחובר
   const [showAll,      setShowAll]      = useState(false)
 
+  // טעינת הפוסטים מחדש בכל פעם שמשתנה המשתמש או מצב התצוגה
   useEffect(() => {
     setLoading(true)
+
+    // בחירת הפונקציה המתאימה לפי מצב התצוגה הנוכחי
     const fetchPosts = showAll ? getPosts() : getPostsByUser(user.id)
     fetchPosts
       .then(setPosts)
       .finally(() => setLoading(false))
   }, [user.id, showAll])
 
+  // הוספת פוסט חדש – שולח לשרת ומוסיף לרשימה המקומית
   async function handleAdd(title, body) {
     const created = await createPost({ userId: user.id, title, body })
     setPosts(prev => [...prev, created])
   }
 
+  // עדכון פוסט קיים – מחליף ברשימה ומעדכן גם את הפוסט הנבחר אם צריך
   async function handleEdit(post, title, body) {
     const updated = await updatePost(post.id, { ...post, title, body })
     setPosts(prev => prev.map(p => p.id === updated.id ? updated : p))
+
+    // אם הפוסט שעודכן הוא הנבחר כרגע – מעדכנים גם אותו
     if (selectedPost?.id === updated.id) setSelectedPost(updated)
   }
 
+  // מחיקת פוסט – מסיר מהשרת ומהרשימה ומבטל בחירה אם צריך
   async function handleDelete(id) {
     await deletePost(id)
     setPosts(prev => prev.filter(p => p.id !== id))
+
+    // אם הפוסט שנמחק הוא הנבחר – מבטלים את הבחירה
     if (selectedPost?.id === id) setSelectedPost(null)
   }
 
+  // התנתקות וניווט לדף הכניסה
   function handleLogout() { logout(); navigate('/login') }
 
+  // חישוב הפוסטים המוצגים לפי טקסט החיפוש – לפי כותרת או מזהה
   const displayed = posts.filter(p =>
     p.title.toLowerCase().includes(search.toLowerCase()) ||
     String(p.id).includes(search)
@@ -61,13 +90,18 @@ export default function PostsPage() {
           <p>Share and discover delicious recipes</p>
         </div>
 
+        {/* כפתורי החלפה בין מצב הצגת הפוסטים של המשתמש לכל הפוסטים */}
         <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
+
+          {/* כפתור הצגת הפוסטים של המשתמש בלבד */}
           <button
             onClick={() => setShowAll(false)}
             className={!showAll ? 'primary' : ''}
           >
             My Posts
           </button>
+
+          {/* כפתור הצגת כל הפוסטים של כולם */}
           <button
             onClick={() => setShowAll(true)}
             className={showAll ? 'primary' : ''}
@@ -76,12 +110,15 @@ export default function PostsPage() {
           </button>
         </div>
 
+        {/* טופס הוספת פוסט חדש – מוסתר במצב הצגת כל הפוסטים */}
         {!showAll && <PostForm onAdd={handleAdd} />}
 
+        {/* שורת חיפוש */}
         <div className="controls-row">
           <SearchBar value={search} onChange={setSearch} placeholder="Search recipes by id or title..." />
         </div>
 
+        {/* רשימת הפוסטים – מחכה לסיום הטעינה לפני הרינדור */}
         {loading
           ? <p>Loading...</p>
           : <PostList
@@ -96,6 +133,7 @@ export default function PostsPage() {
         }
       </main>
 
+      {/* חלון פרטי המשתמש – מוצג רק אם לחצו על פרטים אישיים */}
       {showInfo && (
         <Modal onClose={() => setShowInfo(false)}>
           <h2 style={{ marginBottom: 16 }}>My Info</h2>

@@ -1,11 +1,5 @@
-/**
- * SortSelect – dropdown for choosing sort criteria.
- *
- * Props:
- *   value    – currently selected option value
- *   onChange – setter function
- *   options  – array of { value, label } objects
- */
+// רכיב תפריט נפתח לבחירת קריטריון מיון או סינון
+// מקבל את הערך הנבחר, פונקציית עדכון, ורשימת האפשרויות להצגה
 export default function SortSelect({ value, onChange, options }) {
   return (
     <select
@@ -19,6 +13,7 @@ export default function SortSelect({ value, onChange, options }) {
         cursor: 'pointer',
       }}
     >
+      {/* רינדור כל אפשרות בתפריט לפי הרשימה שהתקבלה */}
       {options.map(opt => (
         <option key={opt.value} value={opt.value}>
           {opt.label}

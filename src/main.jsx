@@ -16,7 +16,6 @@ import './styles/components.css'
 // יצירת root ראשי של React בתוך index.html
 ReactDOM.createRoot(document.getElementById('root')).render(
 
-  // StrictMode עוזר לזהות בעיות אפשריות בזמן פיתוח
   <React.StrictMode>
 
     {/* מאפשר שימוש ב־React Router בכל האפליקציה */}

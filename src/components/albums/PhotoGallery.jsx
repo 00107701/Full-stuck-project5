@@ -48,7 +48,7 @@ export default function PhotoGallery({ albumId, currentUser }) {
         // אם זה עמוד ראשון נחליף את הרשימה, אחרת נוסיף להמשך
         setPhotos(prev => (page === 1 ? batch : [...prev, ...batch]))
 
-        // אם קיבלנו פחות מ־PAGE_SIZE סימן שאין עוד תמונות להמשך
+        // אם קיבלנו פחות מ־P AGE_SIZE סימן שאין עוד תמונות להמשך
         setHasMore(batch.length === PAGE_SIZE)
       } catch (error) {
         console.error('Failed to load photos:', error)
