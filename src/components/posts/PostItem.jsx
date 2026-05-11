@@ -3,7 +3,7 @@ import CommentSection from './CommentSection'
 
 // קומפוננטה שמציגה פוסט/מתכון אחד מתוך רשימת הפוסטים
 // במצב רגיל מוצגים רק id וכותרת, ובמצב פתוח מוצג גם התוכן והתגובות
-export default function PostItem({ post, currentUser, isSelected, onSelect, onEdit, onDelete }) {
+export default function PostItem({ post, currentUser, isSelected, onSelect, onEdit, onDelete, isOwner }) {
   // האם הפוסט נמצא עכשיו במצב עריכה
   const [isEditing, setIsEditing] = useState(false)
 
@@ -49,23 +49,26 @@ export default function PostItem({ post, currentUser, isSelected, onSelect, onEd
           {isSelected ? 'Close' : 'View'}
         </button>
 
-        {/* מעבר למצב עריכה וגם פתיחת הפוסט */}
-        <button
-          onClick={() => {
-            setIsEditing(true)
-            onSelect(post)
-          }}
-        >
-          Edit
-        </button>
+        {/* כפתורי עריכה ומחיקה רק לבעל הפוסט */}
+        {isOwner && (
+          <>
+            <button
+              onClick={() => {
+                setIsEditing(true)
+                onSelect(post)
+              }}
+            >
+              Edit
+            </button>
 
-        {/* מחיקת הפוסט */}
-        <button
-          onClick={() => onDelete(post.id)}
-          style={{ color: '#c0392b' }}
-        >
-          Delete
-        </button>
+            <button
+              onClick={() => onDelete(post.id)}
+              style={{ color: '#c0392b' }}
+            >
+              Delete
+            </button>
+          </>
+        )}
       </div>
 
       {/* תצוגה מורחבת של הפוסט כאשר הוא נבחר */}

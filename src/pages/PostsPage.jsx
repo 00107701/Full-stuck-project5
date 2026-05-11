@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useAuth } from '../context/AuthContext'
-import { getPostsByUser, createPost, updatePost, deletePost } from '../services/api'
+import { getPosts, getPostsByUser, createPost, updatePost, deletePost } from '../services/api'
 import Navbar from '../components/layout/Navbar'
 import PostList from '../components/posts/PostList'
 import PostForm from '../components/posts/PostForm'
@@ -17,12 +17,15 @@ export default function PostsPage() {
   const [search,       setSearch]       = useState('')
   const [selectedPost, setSelectedPost] = useState(null)
   const [showInfo,     setShowInfo]     = useState(false)
+  const [showAll,      setShowAll]      = useState(false)
 
   useEffect(() => {
-    getPostsByUser(user.id)
+    setLoading(true)
+    const fetchPosts = showAll ? getPosts() : getPostsByUser(user.id)
+    fetchPosts
       .then(setPosts)
       .finally(() => setLoading(false))
-  }, [user.id])
+  }, [user.id, showAll])
 
   async function handleAdd(title, body) {
     const created = await createPost({ userId: user.id, title, body })
@@ -54,10 +57,26 @@ export default function PostsPage() {
 
       <main className="page-main">
         <div className="page-header">
-          <h2>My Recipes</h2>
+          <h2>📖 My Recipes</h2>
+          <p>Share and discover delicious recipes</p>
         </div>
 
-        <PostForm onAdd={handleAdd} />
+        <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
+          <button
+            onClick={() => setShowAll(false)}
+            className={!showAll ? 'primary' : ''}
+          >
+            My Posts
+          </button>
+          <button
+            onClick={() => setShowAll(true)}
+            className={showAll ? 'primary' : ''}
+          >
+            All Posts
+          </button>
+        </div>
+
+        {!showAll && <PostForm onAdd={handleAdd} />}
 
         <div className="controls-row">
           <SearchBar value={search} onChange={setSearch} placeholder="Search recipes by id or title..." />
@@ -72,6 +91,7 @@ export default function PostsPage() {
               onSelect={setSelectedPost}
               onEdit={handleEdit}
               onDelete={handleDelete}
+              showAll={showAll}
             />
         }
       </main>

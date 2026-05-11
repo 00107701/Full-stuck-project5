@@ -70,6 +70,18 @@
       "title": "onion",
       "completed": true,
       "id": 7
+    },
+    {
+      "userId": 2,
+      "title": "tomato",
+      "completed": false,
+      "id": 8
+    },
+    {
+      "userId": 2,
+      "title": "cucamber",
+      "completed": false,
+      "id": 9
     }
   ],
   "posts": [
@@ -87,8 +99,8 @@
     },
     {
       "userId": 2,
-      "title": "my soup",
-      "body": "1 a\n2 b\n3 c",
+      "title": "פסטה רוזה",
+      "body": "1 פסטה",
       "id": 3
     }
   ],
@@ -207,6 +219,14 @@
       "body": "קוללל ונדיר",
       "userId": 3,
       "id": 3
+    },
+    {
+      "postId": 2,
+      "name": "Isca Fitousi",
+      "email": "isca7701@gmail.com",
+      "body": "מטורף",
+      "userId": 2,
+      "id": 5
     }
   ]
 }

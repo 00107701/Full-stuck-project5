@@ -1,10 +1,6 @@
 import PostItem from './PostItem'
 
-/**
- * PostList – renders list of posts in review mode (id + title only).
- * Selected post is highlighted and shown in full below the list.
- */
-export default function PostList({ posts, currentUser, selectedPost, onSelect, onEdit, onDelete }) {
+export default function PostList({ posts, currentUser, selectedPost, onSelect, onEdit, onDelete, showAll }) {
   if (posts.length === 0) return <p>No posts found.</p>
 
   return (
@@ -19,6 +15,7 @@ export default function PostList({ posts, currentUser, selectedPost, onSelect, o
             onSelect={onSelect}
             onEdit={onEdit}
             onDelete={onDelete}
+            isOwner={post.userId === currentUser.id}
           />
         ))}
       </ul>

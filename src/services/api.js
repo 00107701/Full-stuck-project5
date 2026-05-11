@@ -1,54 +1,6 @@
 // כתובת הבסיס של השרת המקומי שלנו
 const BASE = 'http://localhost:3001'
 
-/**
- * Generic helper – throws on non-ok responses.
- */
-/*
-async function request(path, options = {}) {
-  const res = await fetch(`${BASE}${path}`, {
-    headers: { 'Content-Type': 'application/json' },
-    ...options,
-  })
-  if (!res.ok) throw new Error(`Request failed: ${res.status}`)
-  return res.json()
-}
-
-// ── Users ──────────────────────────────────────────────
-export const getUsers      = ()         => request('/users')
-export const getUserById   = (id)       => request(`/users/${id}`)
-export const createUser    = (data)     => request('/users', { method: 'POST', body: JSON.stringify(data) })
-
-// ── Todos ──────────────────────────────────────────────
-export const getTodosByUser = (userId)  => request(`/todos?userId=${userId}`)
-export const createTodo     = (data)    => request('/todos', { method: 'POST', body: JSON.stringify(data) })
-export const updateTodo     = (id, data)=> request(`/todos/${id}`, { method: 'PUT', body: JSON.stringify(data) })
-export const deleteTodo     = (id)      => request(`/todos/${id}`, { method: 'DELETE' })
-
-// ── Posts ──────────────────────────────────────────────
-export const getPostsByUser = (userId)  => request(`/posts?userId=${userId}`)
-export const createPost     = (data)    => request('/posts', { method: 'POST', body: JSON.stringify(data) })
-export const updatePost     = (id, data)=> request(`/posts/${id}`, { method: 'PUT', body: JSON.stringify(data) })
-export const deletePost     = (id)      => request(`/posts/${id}`, { method: 'DELETE' })
-
-// ── Comments ───────────────────────────────────────────
-export const getCommentsByPost = (postId) => request(`/comments?postId=${postId}`)
-export const createComment     = (data)   => request('/comments', { method: 'POST', body: JSON.stringify(data) })
-export const updateComment     = (id, data)=> request(`/comments/${id}`, { method: 'PUT', body: JSON.stringify(data) })
-export const deleteComment     = (id)     => request(`/comments/${id}`, { method: 'DELETE' })
-
-// ── Albums ─────────────────────────────────────────────
-export const getAlbumsByUser = (userId)  => request(`/albums?userId=${userId}`)
-export const createAlbum     = (data)    => request('/albums', { method: 'POST', body: JSON.stringify(data) })
-
-// ── Photos ─────────────────────────────────────────────
-export const getPhotosByAlbum = (albumId) => request(`/photos?albumId=${albumId}`)
-export const createPhoto      = (data)    => request('/photos', { method: 'POST', body: JSON.stringify(data) })
-export const updatePhoto      = (id, data)=> request(`/photos/${id}`, { method: 'PUT', body: JSON.stringify(data) })
-export const deletePhoto      = (id)      => request(`/photos/${id}`, { method: 'DELETE' })
-*/
-
-
 // פונקציה כללית שמבצעת בקשות לשרת
 // משתמשים בה כדי שלא נכתוב fetch מחדש בכל פעולה
 async function request(path, options = {}) {
@@ -106,6 +58,10 @@ export const deleteTodo = (id) =>
   })
 
 // ── Posts ──────────────────────────────────────────────
+// שליפת כל הפוסטים של כולם
+export const getPosts = () =>
+  request('/posts')
+
 // שליפת הפוסטים של המשתמש המחובר
 export const getPostsByUser = (userId) =>
   request(`/posts?userId=${userId}`)
