@@ -40,7 +40,7 @@ export default function RegisterDetails() {
       <div className="auth-box">
 
         <div className="auth-logo">
-          <h1>🍳 RecipeHub</h1>
+          <h1>RecipeHub</h1>
           <p>Your personal recipe collection</p>
         </div>
 

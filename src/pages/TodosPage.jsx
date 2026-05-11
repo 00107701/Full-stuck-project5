@@ -86,8 +86,7 @@ export default function TodosPage() {
 
       <main className="page-main">
         <div className="page-header">
-          <h2>🛒 My Shopping List</h2>
-          <p>Manage your ingredients and cooking tasks</p>
+          <h2>My Shopping List</h2>
         </div>
 
         <TodoForm onAdd={handleAdd} />

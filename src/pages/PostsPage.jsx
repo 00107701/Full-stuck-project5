@@ -54,8 +54,7 @@ export default function PostsPage() {
 
       <main className="page-main">
         <div className="page-header">
-          <h2>📖 My Recipes</h2>
-          <p>Share and discover delicious recipes</p>
+          <h2>My Recipes</h2>
         </div>
 
         <PostForm onAdd={handleAdd} />

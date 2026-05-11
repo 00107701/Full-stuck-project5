@@ -64,6 +64,12 @@
       "title": "קמח",
       "completed": false,
       "id": 6
+    },
+    {
+      "userId": 2,
+      "title": "onion",
+      "completed": true,
+      "id": 7
     }
   ],
   "posts": [

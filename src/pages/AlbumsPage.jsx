@@ -57,8 +57,7 @@ export default function AlbumsPage() {
 
       <main className="page-main">
         <div className="page-header">
-          <h2>📸 My Recipe Photos</h2>
-          <p>Browse your beautiful dish photography</p>
+          <h2>My Recipe Photos</h2>
         </div>
 
         <form onSubmit={handleAddAlbum} style={{ display: 'flex', gap: 8, marginBottom: 8 }}>

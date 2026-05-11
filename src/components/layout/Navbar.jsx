@@ -15,15 +15,15 @@ export default function Navbar({ onLogout, onInfo }) {
         onClick={() => navigate('/home')}
         style={{ cursor: 'pointer' }}
       >
-        <h2>🍳 RecipeHub</h2>
+        <h2>RecipeHub</h2>
         <span>My personal recipe book</span>
       </div>
 
-      <NavLink to={`/users/${uid}/todos`}  className={linkClass}>🛒 Shopping List</NavLink>
-      <NavLink to={`/users/${uid}/posts`}  className={linkClass}>📖 Recipes</NavLink>
-      <NavLink to={`/users/${uid}/albums`} className={linkClass}>📸 Photos</NavLink>
+      <NavLink to={`/users/${uid}/todos`}  className={linkClass}>Shopping List</NavLink>
+      <NavLink to={`/users/${uid}/posts`}  className={linkClass}>Recipes</NavLink>
+      <NavLink to={`/users/${uid}/albums`} className={linkClass}>Photos</NavLink>
 
-      <button className="nav-btn" onClick={onInfo}>👤 My Info</button>
+      <button className="nav-btn" onClick={onInfo}>My Info</button>
       <button className="nav-btn nav-logout" onClick={onLogout}>← Logout</button>
     </nav>
   )

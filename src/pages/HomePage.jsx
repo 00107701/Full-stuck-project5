@@ -66,17 +66,14 @@ export default function HomePage() {
 
           <div className="stats-grid">
             <div className="stat-card" onClick={() => navigate(`/users/${user.id}/posts`)}>
-              <span className="stat-emoji">📖</span>
               <span className="stat-number">{stats.posts}</span>
               <span className="stat-label">Recipes</span>
             </div>
             <div className="stat-card" onClick={() => navigate(`/users/${user.id}/todos`)}>
-              <span className="stat-emoji">✅</span>
               <span className="stat-number">{stats.doneTodos} / {stats.todos}</span>
               <span className="stat-label">Tasks Done</span>
             </div>
             <div className="stat-card" onClick={() => navigate(`/users/${user.id}/albums`)}>
-              <span className="stat-emoji">📸</span>
               <span className="stat-number">{stats.albums}</span>
               <span className="stat-label">Photo Albums</span>
             </div>
